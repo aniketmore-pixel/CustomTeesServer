@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
@@ -34,7 +35,7 @@ const PORT = process.env.PORT || 5000;
 // CORS configuration
 app.use(
   cors({
-    origin: "http://ct-client-rose.vercel.app/", // Allow your frontend origin
+    origin: "http://localhost:5173", // Allow your frontend origin
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: [
       "Content-Type",
@@ -222,6 +223,9 @@ app.post("/api/generate-pdf", async (req, res) => {
     return res.status(500).json({ success: false, message: "Error generating PDF: " + error.message });
   }
 });
+
+// Serve static files to server
+app.use(express.static(path.join(__dirname, "dist")));
 
 // Existing routes
 app.use("/api/auth", authRouter);
