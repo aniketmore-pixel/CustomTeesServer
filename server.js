@@ -35,7 +35,7 @@ const PORT = process.env.PORT || 5000;
 // CORS configuration
 app.use(
   cors({
-    origin: "http://localhost:5173", // Allow your frontend origin
+    origin: "https://customteesserver.onrender.com", // Allow your frontend origin
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: [
       "Content-Type",
