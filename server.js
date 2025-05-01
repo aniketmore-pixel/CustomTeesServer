@@ -25,7 +25,7 @@ const DesignSubmission = require("./models/DesignSubmission");
 
 // Create a database connection
 mongoose
-  .connect("mongodb+srv://aniketmorepersonal:CS3bSl2JGYSI4i29@cluster0.lxa8x.mongodb.net/")
+  .connect("mongodb+srv://aniketmorepersonal:V8YYESJYWGItiLVW@customteesdb.2urpifj.mongodb.net/?retryWrites=true&w=majority&appName=customteesDB")
   .then(() => console.log("MongoDB connected"))
   .catch((error) => console.log(error));
 
